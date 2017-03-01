@@ -41,8 +41,8 @@ int main(int argc, char *argv[]){
   fprintf(out, "max: %d\n", max);
   fprintf(out, "sum: %d\n", sum);
 
-  shmdt((void *) numbers);
-  shmctl(numbers, IPC_RMID, NULL);
+  shmdt(numbers);
+  shmctl(shmid, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);
   printf("%ld microseconds\n", (end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec));

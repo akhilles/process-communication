@@ -87,8 +87,8 @@ int main(int argc, char *argv[]){
   fclose(readFile);
   fclose(writeFile);
 
-  shmdt((void *) numbers);
-  shmctl(numbers, IPC_RMID, NULL);
+  shmdt(numbers);
+  shmctl(shmid, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);
   printf("%ld microseconds\n", (end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec));
