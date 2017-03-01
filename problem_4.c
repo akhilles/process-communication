@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
   writeFile = fopen(argv[2], "w+");
   int depth = atoi(argv[3]);
   int numProcesses = 1;
-  int iter = depth;
+  int iter = depth-1;
   while(iter > 0){
     numProcesses *= 2;
     iter--;
@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
   while(fscanf(readFile, "%d\n", &numbers[size++]) != EOF);
 
   info_struct info = {.min = INT_MAX, .max = INT_MIN, .sum = 0, .count = 0};
-  process(0, size-1, &info, depth);
+  process(0, size-1, &info, depth-1);
 
   fprintf(writeFile, "min: %d\n", info.min);
   fprintf(writeFile, "max: %d\n", info.max);
