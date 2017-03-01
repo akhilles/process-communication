@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <sys/time.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 
 FILE *writeFile;
 int shmid;
@@ -57,7 +60,7 @@ void process(int start, info_struct *info, int perProcessRemainder){
 int main(int argc, char *argv[]){
   shmid = shmget(IPC_PRIVATE, 100000*sizeof(int), 0666 | IPC_CREAT);
   numbers = shmat(shmid, 0, 0);
-  
+
   struct timeval start,end;
   gettimeofday(&start,NULL);
 
