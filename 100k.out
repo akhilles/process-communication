@@ -1,0 +1,18 @@
+hi, i'm process 25004 and my parent is 11195
+hi, i'm process 25004 and my parent is 11195
+hi, i'm process 25007 and my parent is 25004
+hi, i'm process 25004 and my parent is 11195
+hi, i'm process 25008 and my parent is 25004
+hi, i'm process 25007 and my parent is 25004
+hi, i'm process 25009 and my parent is 25007
+hi, i'm process 25011 and my parent is 25008
+hi, i'm process 25008 and my parent is 25004
+hi, i'm process 25010 and my parent is 25004
+hi, i'm process 25013 and my parent is 25009
+hi, i'm process 25009 and my parent is 25007
+hi, i'm process 25012 and my parent is 25007
+hi, i'm process 25007 and my parent is 25004
+hi, i'm process 25004 and my parent is 11195
+min: -100
+max: 100
+sum: -26054

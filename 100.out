@@ -1,0 +1,11 @@
+hi, i'm process 14821 and my parent is 11195
+hi, i'm process 14824 and my parent is 14821
+hi, i'm process 14825 and my parent is 14824
+hi, i'm process 14827 and my parent is 14825
+hi, i'm process 14828 and my parent is 14827
+hi, i'm process 14829 and my parent is 14828
+hi, i'm process 14830 and my parent is 14829
+hi, i'm process 14831 and my parent is 14830
+min: -98
+max: 96
+sum: 121
