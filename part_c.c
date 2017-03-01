@@ -58,11 +58,11 @@ void process(int start, info_struct *info, int perProcessRemainder){
 }
 
 int main(int argc, char *argv[]){
-  shmid = shmget(IPC_PRIVATE, 100000*sizeof(int), 0666 | IPC_CREAT);
-  numbers = shmat(shmid, 0, 0);
-
   struct timeval start,end;
   gettimeofday(&start,NULL);
+
+  shmid = shmget(IPC_PRIVATE, 1000000*sizeof(int), 0666 | IPC_CREAT);
+  numbers = shmat(shmid, 0, 0);
 
   FILE *readFile = fopen(argv[1], "r");
   writeFile = fopen(argv[2], "w+");
@@ -82,6 +82,9 @@ int main(int argc, char *argv[]){
 
   fclose(readFile);
   fclose(writeFile);
+
+  shmdt(numbers);
+  shmctl(numbers, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);
   printf("%ld microseconds\n", (end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec));

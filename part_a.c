@@ -3,13 +3,20 @@
 #include <unistd.h>
 #include <limits.h>
 #include <sys/time.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 
-int numbers[100000];
+int shmid;
+int *numbers;
 int size;
 
 int main(int argc, char *argv[]){
   struct timeval start,end;
   gettimeofday(&start,NULL);
+
+  shmid = shmget(IPC_PRIVATE, 1000000*sizeof(int), 0666 | IPC_CREAT);
+  numbers = shmat(shmid, 0, 0);
 
   FILE *input = fopen(argv[1], "r");
 
@@ -33,6 +40,9 @@ int main(int argc, char *argv[]){
   fprintf(out, "min: %d\n", min);
   fprintf(out, "max: %d\n", max);
   fprintf(out, "sum: %d\n", sum);
+
+  shmdt(numbers);
+  shmctl(numbers, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);
   printf("%ld microseconds\n", (end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec));
