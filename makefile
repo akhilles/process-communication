@@ -5,4 +5,4 @@ all:
 
 clean:
 	rm *.sh
-	rm output.txt
+	rm *.txt
