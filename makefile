@@ -5,5 +5,5 @@ all:
 	gcc -o p4.sh problem_4.c
 
 clean:
-	rm *.sh
-	rm *.txt
+	rm -f *.sh
+	rm -f *.txt
