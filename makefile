@@ -1,8 +1,8 @@
 all:
-	gcc -o p1.sh problem_1.c
-	gcc -o p2.sh problem_2.c
-	gcc -o p3.sh problem_3.c
-	gcc -o p4.sh problem_4.c
+	gcc -o pa.sh part_a.c
+	gcc -o pb.sh part_b.c
+	gcc -o pc.sh part_c.c
+	gcc -o pd.sh part_d.c
 
 clean:
 	rm -f *.sh
