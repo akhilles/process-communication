@@ -76,7 +76,7 @@ int main(int argc, char *argv[]){
   fclose(writeFile);
 
   gettimeofday(&end,NULL);
-  printf("%.3f milliseconds\n", ((end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec))/1000.0);
+  printf("%ld microseconds\n", (end.tv_sec*100000 + end.tv_usec) - (start.tv_sec*100000 + start.tv_usec));
 
   return 0;
 }
