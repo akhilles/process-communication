@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
   fprintf(out, "max: %d\n", max);
   fprintf(out, "sum: %d\n", sum);
 
-  shmdt(numbers);
+  shmdt((void *) numbers);
   shmctl(numbers, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);

@@ -87,7 +87,7 @@ int main(int argc, char *argv[]){
   fclose(readFile);
   fclose(writeFile);
 
-  shmdt(numbers);
+  shmdt((void *) numbers);
   shmctl(numbers, IPC_RMID, NULL);
 
   gettimeofday(&end,NULL);
