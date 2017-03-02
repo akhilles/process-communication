@@ -34,10 +34,8 @@ We can use processes to compute the minimum, maximum, and sum in the following w
   4. First process spawns multiple processes that each spawn several other processes.  
    * Here, depth of process tree = 2^(k - 1) where k represents the number of processes.  
    
-Given the number of processes, or in the case of problem 4 the depth of the process tree,
-the array containing the input integers is equally partitioned. Pipelines and shared memory 
-are then used as a form of IPC in order for the parent and child processes to communicate 
-with eachother. Finally, the resulting min, max, and sum are written to the output file. 
+The IPC occurs recursively through a custom function called *process(start, info_struct * info, perProcessRemainder)* which takes in *start*, the start position of each array division, a structure containing *min*, *max*, *sum*, and *count* called *info_start*, and 
+the *perProcessRemainder*, which holds the amount of integers that get allocated per process. The integers are loaded from the input into an array, which is partitioned equally depending on the number of processes (or depth of process tree in the case of problem 4). Pipelines and shared memory are then used as the main form of IPC as a way for the the parent process to communicate with the child process.
 
 ## Analysis
 Below, you will find a table of all the runtimes for the different problems, in microseconds.     
