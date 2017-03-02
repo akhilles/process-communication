@@ -26,6 +26,12 @@ Code files:
 Test input file:  
 `100k.in`
 
+Output files:
+`part_a.out`  
+`part_b.out`  
+`part_c.out`  
+`part_d.out` 
+
 ## How it works
 We can use processes to compute the minimum, maximum, and sum in the following ways:  
   1. Single Process to compute the minimum, maximum, and sum
@@ -35,7 +41,7 @@ We can use processes to compute the minimum, maximum, and sum in the following w
    * Here, depth of process tree = 2^(k - 1) where k represents the number of processes.  
    
 The IPC occurs recursively through a custom function called *process(start, info_struct * info, perProcessRemainder)* which takes in *start*, the start position of each array division, a structure containing *min*, *max*, *sum*, and *count* called *info_start*, and 
-the *perProcessRemainder*, which holds the amount of integers that get allocated per process. The integers are loaded from the input into an array, which is partitioned equally depending on the number of processes (or depth of process tree in the case of problem 4). Pipelines and shared memory are then used as the main form of IPC as a way for the the parent process to communicate with the child process.
+the *perProcessRemainder*, which holds the amount of integers that get allocated per process. The integers are loaded from the input into an array, which is partitioned equally depending on the number of processes (or depth of process tree in the case of problem 4). Pipelines and shared memory are then used as the main form of IPC as a way for the the parent process to communicate with the child process. The information contained within the struct, namely *min*, *max*, and *sum*, are finally written to the chosen output file.
 
 ## Analysis
 Below, you will find a table of all the runtimes for the different problems, in microseconds.     
