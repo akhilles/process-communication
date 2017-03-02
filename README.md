@@ -26,7 +26,7 @@ Code files:
 Test input file:  
 `100k.in`
 
-Output files:
+Output files:  
 `part_a.out`  
 `part_b.out`  
 `part_c.out`  
