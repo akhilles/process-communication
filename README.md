@@ -26,8 +26,8 @@ Code files:
 Test input file:  
 `100k.in`
 
-## Problem Description
-The problem is to compute the minimum, maximum, and sum of the integers in an input file using processes in the following ways:  
+## How it works
+We can use processes to compute the minimum, maximum, and sum in the following ways:  
   1. Single Process to compute the minimum, maximum, and sum
   2. Multiple processes that can spawn upto 1 process each
   3. First process spawns all other processes, and
