@@ -35,7 +35,7 @@ The following approaces were implemented to compute the minimum, maximum, and su
   2. Multiple processes where each process spawns at most one process
   3. Multiple processes where first process spawns all other processes
   4. Multiple processes where each process can spawn multiple other processes (in our implementation, each parent process was forced to spawn exactly two child processes)
-        * Number of slave processes = 2^(k - 1) where k represents the depth of the process tree
+     * Number of slave processes = 2^(k - 1) where k represents the depth of the process tree
 
 ## Inter-Process Communication (IPC):  
 The IPC occurs through a recursive function called process(int start, info_struct * info) which takes in *start*, the start position of each array division and a structure containing *min*, *max*, *sum*, and *count* called *info_start*. The function also has access to *size* (the number of total integers to process) and *perProcess* (the number of integers that each process is responsible for). The integers are loaded from the input file into an array, which is partitioned equally depending on the number of processes (or depth of process tree in the case of part D).
